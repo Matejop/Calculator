@@ -191,7 +191,7 @@ public class DrawingCanvas extends Canvas {
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
             		RenderingHints.VALUE_ANTIALIAS_ON);
             g2.setFont(font);
-            g2.drawString(display, 40, 120); 
+            g2.drawString(display, 40, 102); 
             
             
         }
