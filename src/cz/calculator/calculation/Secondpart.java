@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class Secondpart {
 
 	public static void secondpart (){
-		System.out.println("TeÏ napiš jestly to má byt mocnina(!m!) nebo odmocnina(!o!).(!nemaèkej Enter!).");
-		System.out.println("TeÏ napiš èíslo s kterím chceš poèítat tohle èíslo musí bıt buÏ za !m! nebo za !o!.(!TeÏ teprve zmaèkní Enter!).");
 		Scanner reader=new Scanner(System.in); 
 		String type=reader.nextLine();
 		String taker;

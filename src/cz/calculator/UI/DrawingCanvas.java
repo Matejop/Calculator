@@ -4,20 +4,21 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.stream.Collector;
 public class DrawingCanvas extends Canvas {
     Image image;
     public ArrayList buttons= new ArrayList();
     public String display="0";
-    
     int x;
     int y;   
         DrawingCanvas(){
             try {
-                 image = ImageIO.read(new File("c:\\Programovani\\Calculator.Image.png.second.png"));
+                 image = ImageIO.read(new File("Calculator.Image.png.second.png") );
             } catch( java.io.IOException e){
                 System.out.println(e.getMessage());
                 e.printStackTrace();
                 System.exit(1);
+             
             }
             Button button = new Button();
             button.leftupper.x=19;
@@ -181,14 +182,18 @@ public class DrawingCanvas extends Canvas {
           	   g.drawImage(image, x, y,498,605,this);
           	   
           	   }
-            
+            Font font = new Font("SansSerif", Font.PLAIN, 96);
+            if(display.length()>8) {
+            	Font font2 = new Font("SansSerif", Font.PLAIN, 46);
+            	font=font2;
+            }
+           
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
             		RenderingHints.VALUE_ANTIALIAS_ON);
-            Font font = new Font("SansSerif", Font.PLAIN, 96);
             g2.setFont(font);
             g2.drawString(display, 40, 120); 
             
-          
+            
         }
        
         public void  setCoordinates(int x) {

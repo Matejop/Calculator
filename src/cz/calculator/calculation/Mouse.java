@@ -102,7 +102,7 @@ import cz.calculator.UI.DrawingCanvas;
 											
 									}else{
 										collector=collector+taken.label;
-											//System.out.println(collector);
+										//System.out.println(collector.length());
 										mycanvas.display=collector;
 										mycanvas.repaint();
 								}
