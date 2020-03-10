@@ -1,34 +1,27 @@
 package cz.calculator.calculation;
 
 
-import java.math.BigDecimal;
+	import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class Secondpart {
+	public class Secondpart {
 
-	public static void secondpart (){
-		Scanner reader=new Scanner(System.in); 
-		String type=reader.nextLine();
-		String taker;
+	public String power (String seven){
 		BigDecimal result;
-		BigDecimal Firstfinal;
-		if(type.charAt(0)=='m') {
-			taker=type.substring(1,type.length());
-			Firstfinal= new BigDecimal(taker);
+		BigDecimal Firstfinal;			
+			Firstfinal= new BigDecimal(seven);
 			result=Firstfinal.multiply(Firstfinal);
-			System.out.println(result);
-		}
-		double secondresult;
-		if(type.charAt(0)=='o') {
-			taker=type.substring(1,type.length());
-			Firstfinal= new BigDecimal(taker);
+			return result.toString();
+		
+	}
+	public String squareRoot (String seven){	
+		BigDecimal Firstfinal;			
+		double secondresult;			
+			Firstfinal= new BigDecimal(seven);
 			secondresult=Math.sqrt(Firstfinal.doubleValue());
-			System.out.println(secondresult);
-			
-
+			String stringresult=String.valueOf(secondresult);
+			return stringresult;
 		
-		
-		}
 	}
 
 }

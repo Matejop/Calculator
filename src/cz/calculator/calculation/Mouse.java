@@ -7,7 +7,7 @@ import cz.calculator.UI.DrawingCanvas;
 	public class Mouse implements MouseListener {
 	public ArrayList<Button> buttons;
 	String cutout= new String();
-	String collector= new String();
+	String collector= "0";
 	ArrayList numbers;
 	char operation;
 	@Override
@@ -64,9 +64,10 @@ import cz.calculator.UI.DrawingCanvas;
 									 if(d!=-1) {
 										 center=d;
 										 
+										 
 									 }
 									 //  Zkontroluje jestli neni na konci dalsi operator(/,*,-,+) a kdyz tam je tak zameni predchozi s tim novim.
-									 	
+									 
 									 if(center==collector.length()-1) {
 										 cutout=collector.substring(0,collector.length()-1 );
 										 collector=cutout;
@@ -85,7 +86,22 @@ import cz.calculator.UI.DrawingCanvas;
 										 }
 									 }	
 								}
-							
+							if(taken.label=='m'){
+						 		Secondpart taker;
+						 		taker = new Secondpart();
+						 		collector=taker.power(collector);
+						 		 mycanvas.display=collector;
+								 mycanvas.repaint();
+								 return;
+						 	}
+							if(taken.label=='o'){
+						 		Secondpart taker;
+						 		taker = new Secondpart();
+						 		collector=taker.squareRoot(collector);
+						 		 mycanvas.display=collector;
+								 mycanvas.repaint();
+								 return;
+						 	}
 								if(taken.label=='='){
 									Calculator taker;
 									taker= new Calculator();
@@ -102,7 +118,7 @@ import cz.calculator.UI.DrawingCanvas;
 											
 									}else{
 										collector=collector+taken.label;
-										//System.out.println(collector.length());
+										//sSystem.out.println(collector.length());
 										mycanvas.display=collector;
 										mycanvas.repaint();
 								}
