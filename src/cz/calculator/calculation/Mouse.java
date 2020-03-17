@@ -104,23 +104,41 @@ import cz.calculator.UI.DrawingCanvas;
 						 	}
 								if(taken.label=='='){
 									Calculator taker;
+									if(!collector.contains("+")&&!collector.contains("/")&&!collector.contains("*")&&!collector.contains("-")){
+										return;
+									}
+											
 									taker= new Calculator();
 									collector=taker.calculate(collector);
 									mycanvas.display=collector;
 									mycanvas.repaint();
+									
 								} else {
 									if(taken.label=='d'){
 										if(collector.length()>0) {
 											collector=collector.substring(0,collector.length()-1);
+											if(collector.equals("")) {
+												collector="0";
+											
+											}
 											mycanvas.display=collector;
 											mycanvas.repaint();
 										}
-											
-									}else{
+										
+									}else {
+										
+										if(collector.equals("0")&&  Character.isDigit(taken.label)){
+											collector=""+taken.label;
+											mycanvas.display=collector;
+											mycanvas.repaint();
+											return;
+										}
+										
 										collector=collector+taken.label;
-										//sSystem.out.println(collector.length());
+										//System.out.println(collector.length());
 										mycanvas.display=collector;
 										mycanvas.repaint();
+										
 								}
 							}	
 						}
