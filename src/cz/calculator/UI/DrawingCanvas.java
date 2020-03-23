@@ -182,9 +182,9 @@ public class DrawingCanvas extends Canvas {
           	   g.drawImage(image, x, y,498,605,this);
           	   
           	   }
-            Font font = new Font("SansSerif", Font.PLAIN, 96);
+            Font font = new Font("SansSerif", Font.PLAIN, 76);
             if(display.length()>8) {
-            	Font font2 = new Font("SansSerif", Font.PLAIN, 46);
+            	Font font2 = new Font("SansSerif", Font.PLAIN, 26);
             	font=font2;
             }
            
